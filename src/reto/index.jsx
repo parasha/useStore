@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Provider, useStore } from "reto";
 import store from "./store";
 
 function FirstChild() {
   const { count } = useStore(store);
+
+  useEffect(() => {
+    console.log("change");
+  });
 
   return <div>count: {count}</div>;
 }
